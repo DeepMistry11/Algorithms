@@ -11,7 +11,6 @@ public class Main {
         length = ip.nextInt();
 
         int[] numbers = new int[length];
-        System.out.println("Enter the " + length + " numbers now.");
 
         for (int i = 0 ; i < numbers.length; i++ ) {
             numbers[i] = ip.nextInt();
@@ -19,15 +18,13 @@ public class Main {
 
         Arrays.sort(numbers);
 
-        for (int i = 0 ; i < numbers.length; i++ ) {
-            System.out.println("Sorted array: " + numbers[i]);
-        }
-
-        int maxProduct;
+        long maxProduct;
+        long last = numbers[length-1];
+        long secondLast = numbers[length-2];
 
         if(length > 1){
-            maxProduct = numbers[length-1] * numbers[length-2];
-            System.out.println("Max Product is: " + maxProduct);
+            maxProduct = last * secondLast;
+            System.out.println(maxProduct);
         }else{
             System.out.println("You need atleast 2 numbers to find max product ");
         }
